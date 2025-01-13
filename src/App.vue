@@ -91,7 +91,7 @@
   import my_nav from './components/nav.vue'
   import my_nav_phone from './components/nav_phone.vue'
   import trend_game from './components/trend_game.vue'
-  var test= [1,2,3,4,5]
+  
   const shit= [{
   'id': '1',
   'name': 'salwa'
@@ -113,7 +113,6 @@
   genre_2_list,
   genre_3_list
   ]
-  
   
   function get_genre(id, genre){
   axios.get(`https:free-to-play-games-database.p.rapidapi.com/api/games?category=${genre}`, {
