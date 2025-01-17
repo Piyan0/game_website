@@ -2,7 +2,14 @@
   <div  style="width: 200px; aspect-ratio: 200/180; background-color: #272A3B" class="main rounded-2 text-light gap-1 p-1 alen fol" tabindex="1">
     <div class=" flex-grow-1 pore  w-100">
       <div data-image style="height: 122%; transition: all 500ms ease" class="w-100 top-left posa fol alen gap-1">
-        <div :style="{'background-image': `url(${props.image})`}" class="bg-img flex-grow-1 w-100"></div>
+        <!--<div :style="{'background-image': `url(${props.image})`}" class="bg-img flex-grow-1 w-100"></div>-->
+        <UseImage class="flex-grow-1 w-100" :src="props.image">
+          <template #loading>
+            <div class="force-center flex-grow-1">
+            <img width=56 src="assets/load.svg" alt="">
+            </div>
+          </template>
+        </UseImage>
         <p data-tittle style="background-color: #363B59" class="w-100 text-center rounded-2 fw-bold f-12  p-1 ">
           {{tittle}}
         </p>
@@ -29,6 +36,7 @@
 <!-- -->
 
 <script setup>
+  import {UseImage} from '@vueuse/components'
   const props= defineProps(['tittle', 'dev', 'genre', 'image' ])
   
 </script>
